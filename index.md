@@ -1,9 +1,8 @@
 # MyST: An example project
 
-## Contents:
-
 ```{toctree}
 ---
+caption: Contents
 maxdepth: 2
 ---
 source/scalar_dynam-MyST.md
