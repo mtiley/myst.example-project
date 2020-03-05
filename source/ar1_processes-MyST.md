@@ -394,11 +394,11 @@ Test the class you have written by going through the steps
 
 for distributions $\phi$ of the following types
 
--   [beta distribution](https://en.wikipedia.org/wiki/Beta\_distribution\)
+-   [beta distribution](https://en.wikipedia.org/wiki/Beta_distribution)
     with $\alpha = \beta = 2$
--   [beta distribution](https://en.wikipedia.org/wiki/Beta\_distribution\)
+-   [beta distribution](https://en.wikipedia.org/wiki/Beta_distribution)
     with $\alpha = 2$ and $\beta = 5$
--   [beta distribution](https://en.wikipedia.org/wiki/Beta\_distribution\)
+-   [beta distribution](https://en.wikipedia.org/wiki/Beta_distribution)
     with $\alpha = \beta = 0.5$
 
 Use $n=500$.
