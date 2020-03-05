@@ -31,7 +31,6 @@ import matplotlib.pyplot as plt
 
 ## Some Definitions
 
-
 This section sets out the objects of interest and the kinds of
 properties we study.
 
@@ -79,7 +78,9 @@ can write the trajectory more simply as $x_t = g^t(x_0)$ for $t \geq 0$.
 
 One simple example is the **linear difference equation**
 
-$$x_{t+1} = a x_t + b, \qquad S = \mathbb R$$
+$$
+x_{t+1} = a x_t + b, \qquad S = \mathbb R
+$$
 
 where $a, b$ are fixed constants.
 
@@ -97,7 +98,12 @@ a^2 x_0 + a b + b, \quad \text{etc.}
 Continuing in this way, and using our knowledge of geometric series,
 we find that, for any $t \geq 0$,
 
-$$x_t = a^t x_0 + b \frac{1 - a^t}{1 - a}$$
+```{math}
+---
+label: sdslinmod
+---
+x_t = a^t x_0 + b \frac{1 - a^t}{1 - a}
+```
 
 This is about all we need to know about the linear model.
 
@@ -107,7 +113,9 @@ understanding of the dynamics.
 Notice in particular that $|a| < 1$, then, by
 {math:numref}`sdslinmod`, we have
 
-$$x_t \to  \frac{b}{1 - a} \text{ as } t \to \infty$$
+$$
+x_t \to  \frac{b}{1 - a} \text{ as } t \to \infty
+$$
 
 regardless of $x_0$
 
@@ -162,7 +170,9 @@ definition to check that
 A steady state $x^*$ of $x_{t+1} = g(x_t)$ is called **globally stable**
 if, for all $x_0 \in S$,
 
-$$x_t = g^t(x_0) \to x^* \text{ as } t \to \infty$$
+$$
+x_t = g^t(x_0) \to x^* \text{ as } t \to \infty
+$$
 
 For example, in the linear model $x_{t+1} = a x_t + b$ with $a
 \not= 1$, the steady state $x^*$
@@ -175,9 +185,11 @@ This follows directly from {math:numref}`sdslinmod`.
 A steady state $x^*$ of $x_{t+1} = g(x_t)$ is called **locally stable**
 if there exists an $\epsilon > 0$ such that
 
-$$| x_0 - x^* | < \epsilon
+$$
+| x_0 - x^* | < \epsilon
 \; \implies \;
-x_t = g^t(x_0) \to x^* \text{ as } t \to \infty$$
+x_t = g^t(x_0) \to x^* \text{ as } t \to \infty
+$$
 
 Obviously every globally stable steady state is also locally stable.
 
@@ -339,7 +351,9 @@ For the Solow model, there are two steady states when $S = \mathbb R_+ =
 By using some algebra, we can show that in the second case, the steady
 state is
 
-$$k^* = \left( \frac{sz}{\delta} \right)^{1/(1-\alpha)}$$
+$$
+k^* = \left( \frac{sz}{\delta} \right)^{1/(1-\alpha)}
+$$
 
 ### Trajectories
 
@@ -391,8 +405,10 @@ The Solow model is nonlinear but still generates very regular dynamics.
 
 One model that generates irregular dynamics is the **quadratic map**
 
-$$g(x) = 4 x (1 - x),
-\qquad x \in [0, 1]$$
+$$
+g(x) = 4 x (1 - x),
+\qquad x \in [0, 1]
+$$
 
 Let\'s have a look at the 45 degree diagram.
 
