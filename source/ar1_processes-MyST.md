@@ -65,9 +65,11 @@ To make things even simpler, we will assume that
 
 Iterating backwards from time $t$, we obtain
 
-$$X_t = a X_{t-1} + b +  c W_t 
-        = a^2 X_{t-2} + a b + a c W_{t-1} + b + c W_t 
-        = \cdots$$
+$$
+X_t = a X_{t-1} + b +  c W_t 
+    = a^2 X_{t-2} + a b + a c W_{t-1} + b + c W_t 
+    = \cdots
+$$
 
 If we work all the way back to time zero, we get
 
@@ -133,7 +135,9 @@ Given the dynamics in {math:numref}`ar1_ma` and initial
 conditions $\mu_0,
 v_0$, we obtain $\mu_t, v_t$ and hence
 
-$$\psi_t = N(\mu_t, v_t)$$
+$$
+\psi_t = N(\mu_t, v_t)
+$$
 
 The following code uses these facts to track the sequence of marginal
 distributions $\{ \psi_t \}$.
@@ -259,12 +263,14 @@ A different way to put this, specialized to the current setting, is as
 follows: a density $\psi$ on $\mathbb R$ is **stationary** for the
 AR(1) process if
 
-$$X_t \sim \psi
+$$
+X_t \sim \psi
 \quad \implies \quad 
-a X_t + b + c W_{t+1} \sim \psi$$
+a X_t + b + c W_{t+1} \sim \psi
+$$
 
 The distribution $\psi^*$ in {math:numref}`ar1_psi_star`
-has this property \-\--checking this is an exercise.
+has this property — checking this is an exercise.
 
 (Of course, we are assuming that $|a| < 1$ so that $\psi^*$ is well
 defined.)
@@ -309,9 +315,11 @@ Notes:
 
 For example, if we consider the identity function $h(x) = x$, we get
 
-$$\frac{1}{m} \sum_{t = 1}^m X_t  \to 
+$$
+\frac{1}{m} \sum_{t = 1}^m X_t  \to 
 \int x \psi^*(x) dx
-    \quad \text{as } m \to \infty$$
+    \quad \text{as } m \to \infty
+$$
 
 In other words, the time series sample mean converges to the mean of the
 stationary distribution.
@@ -327,26 +335,32 @@ Let $k$ be a natural number.
 
 The $k$-th central moment of a random variable is defined as
 
-$$M_k := \mathbb E [ (X - \mathbb E X )^k ]$$
+$$
+M_k := \mathbb E [ (X - \mathbb E X )^k ]
+$$
 
 When that random variable is $N(\mu, \sigma^2)$, it is known that
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 M_k = 
 \begin{cases}
     0 & \text{ if } k \text{ is odd} \\
     \sigma^k (k-1)!! & \text{ if } k \text{ is even} 
 \end{cases}
-\end{aligned}$$
+\end{aligned}
+$$
 
 Here $n!!$ is the double factorial.
 
 According to {math:numref}`ar1_ergo`, we should have,
 for any $k \in \mathbb N$,
 
-$$\frac{1}{m} \sum_{t = 1}^m 
+$$
+\frac{1}{m} \sum_{t = 1}^m 
     (X_t - \mu^* )^k
-    \approx M_k$$
+    \approx M_k
+$$
 
 when $m$ is large.
 
@@ -362,8 +376,10 @@ which estimates a density from a sample.
 Write it as a class that takes the data $X$ and bandwidth $h$ when
 initialized and provides a method $f$ such that
 
-$$f(x) = \frac{1}{hn} \sum_{i=1}^n 
-K \left( \frac{x-X_i}{h} \right)$$
+$$
+f(x) = \frac{1}{hn} \sum_{i=1}^n 
+K \left( \frac{x-X_i}{h} \right)
+$$
 
 For $K$ use the Gaussian kernel ($K$ is the standard normal density).
 
@@ -394,12 +410,16 @@ of these distributions?)
 
 In the lecture we discussed the following fact: for the $AR(1)$ process
 
-$$X_{t+1} = a X_t + b + c W_{t+1}$$
+$$
+X_{t+1} = a X_t + b + c W_{t+1}
+$$
 
 with $\{ W_t \}$ iid and standard normal,
 
-$$\psi_t = N(\mu, s^2) \implies \psi_{t+1} 
-= N(a \mu + b, a^2 s^2 + c^2)$$
+$$
+\psi_t = N(\mu, s^2) \implies \psi_{t+1} 
+= N(a \mu + b, a^2 s^2 + c^2)
+$$
 
 Confirm this, at least approximately, by simulation. Let
 
